@@ -34,3 +34,8 @@ Wenn der Entwurf klar vom Code abstrahiert ist, kann die Lösung flexibler sein 
 ### Datenlayer
 * Wegschreiben von Namen und Anzahl der Besuche funktioniert
 * Auslesen von Namen und Anzahl der Besuche funktioniert
+
+# Nachbetrachtung der Codierung
+* Der Partyservice erwartet in den Signaturen die Anzahl der Besuche. Das wäre eigentlich nicht nötig, wenn der Partyservice das Repository injected bekäme. Damit wäre der Service aber nicht mehr so einfach testbar
+* Der Test, der Besuchanzahl > 25 sicherstellt, prüft nur auf die richtige Begrüßung im 26. Besuch. Das ist etwas willkürlich, Fehler > 26 würden nicht auffallen. Gibt es hier bessere Vorgehen?
+* Test des Repositories aus Aufwandsgründen fallengelassen
